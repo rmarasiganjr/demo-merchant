@@ -1,7 +1,7 @@
 <template lang="html">
     <div className="ps-card ps-card--sale-report">
         <div className="ps-card__header">
-            <h4>Sales Reports</h4>
+            <h4>Saless Reports</h4>
         </div>
 
         <div className="ps-card__content">
