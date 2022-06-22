@@ -2,7 +2,7 @@
     <div className="ps-copyright">
         <img src="~/static/img/logo.png" alt="" />
         <p>
-            &copy;2021 Marfury Marketplace. <br />
+            &copy;2022 Dalasmartlockbox. <br />
             All rights reversed.
         </p>
     </div>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'FooterCopyright'
+    name: "FooterCopyright"
 };
 </script>
 

@@ -1,6 +1,6 @@
 export default {
     head: {
-        title: "Martfury Admin template with VueJS",
+        title: "Merchant Web App - Dalasmartlockbox",
         htmlAttrs: {
             lang: "en"
         },
@@ -13,7 +13,7 @@ export default {
             {
                 hid: "description",
                 name: "description",
-                content: "Martfury Admin template with VueJS"
+                content: "Merchant Web App - Dalasmartlockbox"
             }
         ],
         link: [
@@ -50,9 +50,16 @@ export default {
         linkActiveClass: "",
         linkExactActiveClass: "active"
     },
+    modules: ["@nuxtjs/axios", "nuxt-i18n"],
 
     server: {
         port: 4003,
         host: "localhost"
+    },
+    env: {
+        DEMO_ECOMM_TOKEN:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlclR5cGVJZCI6NCwiaWF0IjoxNjU1ODMwNTU0LCJleHAiOjE2ODczNjY1NTR9.qffGeZywK_3XJeVwsf9S7xSX0ygp2vRVB06fAPaTPiE",
+        QASSO_URL: "https://qasso.dalasmartbox.com",
+        QAADMIN_URL: "https://qaadmin.dalasmartbox.com"
     }
 };

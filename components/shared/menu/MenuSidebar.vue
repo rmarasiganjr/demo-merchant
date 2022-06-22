@@ -11,39 +11,34 @@
 
 <script>
 export default {
-    name: 'MenuSidebar',
+    name: "MenuSidebar",
     data() {
         return {
             menuItems: [
                 {
-                    text: 'Dashboard',
-                    url: '/',
-                    icon: 'icon-home'
+                    text: "Products",
+                    url: "/products",
+                    icon: "icon-database"
                 },
                 {
-                    text: 'Products',
-                    url: '/products',
-                    icon: 'icon-database'
+                    text: "Orders",
+                    url: "/orders",
+                    icon: "icon-bag2"
                 },
                 {
-                    text: 'Orders',
-                    url: '/orders',
-                    icon: 'icon-bag2'
+                    text: "Customers",
+                    url: "/customers",
+                    icon: "icon-users2"
                 },
                 {
-                    text: 'Customers',
-                    url: '/customers',
-                    icon: 'icon-users2'
+                    text: "Categories",
+                    url: "/categories",
+                    icon: "icon-users2"
                 },
                 {
-                    text: 'Categories',
-                    url: '/categories',
-                    icon: 'icon-users2'
-                },
-                {
-                    text: 'Settings',
-                    url: '/settings',
-                    icon: 'icon-cog'
+                    text: "Settings",
+                    url: "/settings",
+                    icon: "icon-cog"
                 }
             ]
         };

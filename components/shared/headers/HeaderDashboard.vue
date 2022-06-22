@@ -8,8 +8,8 @@
             <form-header-search />
         </div>
         <div class="header__right">
-            <a class="header__site-link" target="_blank" href="http://vuestorefronts.com/">
-                <span>View your store</span>
+            <a class="header__site-link" target="_blank" href="#">
+                <span>View store</span>
                 <i class="icon-exit-right"></i>
             </a>
         </div>

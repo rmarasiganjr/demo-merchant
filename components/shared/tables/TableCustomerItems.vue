@@ -46,7 +46,7 @@ export default {
         return {
             customers: [
                 {
-                    name: "Jenny Simmonds",
+                    name: "Jenny Simmondsss",
                     phone: "(+921) 211-32-1145",
                     balance: "$211.00",
                     orders: "10",

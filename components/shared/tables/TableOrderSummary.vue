@@ -203,7 +203,7 @@
 
 <script>
 export default {
-    name: 'TableOrderSummary'
+    name: "TableOrderSummary"
 };
 </script>
 

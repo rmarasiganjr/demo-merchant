@@ -1,57 +1,38 @@
 <template lang="html">
     <div class="table-responsive">
-        <table class="table ps-table">
+        <table class="table ps-table" ref="stables">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Date</th>
-                    <th>Product</th>
-                    <th>Payment</th>
-                    <th>Fullfillment</th>
-                    <th>Total</th>
+                    <th>OrderID</th>
+                    <th>Description</th>
+                    <th>Shipping Address</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in orderItems" key="{item.id}">
+                <tr v-for="item in hh" :key="item.id">
                     <td>{{ item.id }}</td>
                     <td>
-                        <nuxt-link to="/orders/detail">
-                            <strong>{{ item.product }}</strong>
-                        </nuxt-link>
+                        {{ item.dalaOrderId }}
                     </td>
                     <td>
-                        <strong> Aug 15, 2020</strong>
+                        {{ item.description }}
                     </td>
                     <td>
-                        <span v-if="item.payment" class="ps-badge success">Paid</span>
-                        <span v-else class="ps-badge gray">Unpaid</span>
+                        {{ item.shippingAddress }}
                     </td>
                     <td>
-                        <span
-                            v-if="item.fullfillment === 'In Progress'"
-                            class="ps-fullfillment warning"
-                        >
-                            In Progress
-                        </span>
-                        <span
-                            v-else-if="item.fullfillment === 'Cancel'"
-                            class="ps-fullfillment danger"
-                        >
-                            In Progress
-                        </span>
-                        <span class="ps-fullfillment success">Delivered</span>
+                        {{ item.createdAt }}
                     </td>
+                    <td>{{ item.statuses }}</td>
                     <td>
-                        <strong>{{ item.total }}</strong>
-                    </td>
-                    <td>
-                        <a href="#">
+                        <button @click="handleUpdate(item.id)">
                             <i class="icon-pencil mr-2"></i>
-                        </a>
-                        <a href="#">
-                            <i class="icon-trash2 mr-2"></i>
-                        </a>
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -62,51 +43,20 @@
 <script>
 export default {
     name: "TableOrderItems",
-    data() {
-        return {
-            orderItems: [
-                {
-                    id: "#A580",
-                    date: "Aug 15, 2020",
-                    product: "Unero Black Military",
-                    payment: true,
-                    fullfillment: "delivered",
-                    total: "$56.00"
-                },
-                {
-                    id: "#B260",
-                    date: "Aug 16, 2020",
-                    product: "Marsh Speaker",
-                    payment: false,
-                    fullfillment: "delivered",
-                    total: "$56.00"
-                },
-                {
-                    id: "#A583",
-                    date: "Aug 17, 2020",
-                    product: "Lined Blend T-Shirt",
-                    payment: true,
-                    fullfillment: "In Progress",
-                    total: "$516.00"
-                },
-                {
-                    id: "#A522",
-                    date: "Aug 18, 2020",
-                    product: "DJI MAcvic Quadcopter",
-                    payment: false,
-                    fullfillment: "delivered",
-                    total: "$112.00"
-                },
-                {
-                    id: "#A112",
-                    date: "Aug 19, 2020",
-                    product: "Black T-Shirt",
-                    payment: true,
-                    fullfillment: "Cancel",
-                    total: "$30.00"
-                }
-            ]
-        };
+
+    methods: {
+        handleUpdate(id) {
+            console.log(id);
+        }
+    },
+    mounted() {
+        this.$store.dispatch("orders/setNewOrders");
+    },
+
+    computed: {
+        hh() {
+            return this.$store.getters["orders/getOrderList"];
+        }
     }
 };
 </script>
